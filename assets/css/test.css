@@ -1,0 +1,19 @@
+.section{
+    /* display: grid; */
+    /* place-items: center; */
+    align-items: center;
+}
+.memo{
+    opacity: 0;
+    filter:  blur(1px);
+    transform: translateY(-10%);
+    transition: 0.8s; 
+
+}
+.show{
+    opacity: 1;
+    filter:  blur(0);
+    transform: translateX(0);
+
+
+}

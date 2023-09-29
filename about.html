@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styyle.css">
+    <link rel="stylesheet" href="assets/css/test.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <title>Haqqımızda</title>
+
+    <style>
+        #nav-toggle {
+            position: absolute;
+            top: -100px;
+        }
+
+        nav .icon-burger {
+            display: none;
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        nav .icon-burger .line {
+            width: 30px;
+            height: 5px;
+            background-color: #fff;
+            margin: 5px;
+            border-radius: 3px;
+            transition: all .3s ease-in-out;
+        }
+
+        @media screen and (max-width: 1000px) {
+            nav .logo {
+                float: none;
+                width: auto;
+                justify-content: center;
+            }
+
+        
+            nav .links {
+                float: none;
+                position: fixed;
+                z-index: 9;
+                left: 0;
+                right: 10px;
+                top: 0px;
+                bottom: 100%;
+                width: auto;
+                height: auto;
+                flex-direction: column;
+                justify-content: unset;
+                overflow: hidden;
+                background: #00048A;
+                box-sizing: border-box;
+                gap: 12px
+                ;
+                transition: all .5s ease-in-out;
+            }
+
+            nav .icon-burger {
+                display: none;
+                position: absolute !important;
+                right: 2%;
+                top: 62%;
+                transform: translateY(-50%);
+            }
+
+            nav .links a {
+                font-size: 20px;
+            }
+
+            nav :checked~.links {
+                top: 0;
+                right: -7px;
+            }
+        }
+
+        nav .icon-burger {
+            display: block;
+            z-index: 99 !important;
+            right: 3%;
+            top: 50px;
+            position: absolute !important;
+        }
+
+        nav :checked~body {
+            overflow: hidden !important;
+        }
+
+
+
+
+        input[type="checkbox"]:checked~body {
+            overflow: hidden;
+        }
+
+        nav .icon-burger {
+            display: block;
+        }
+
+        nav :checked~.icon-burger .line:nth-child(1) {
+            transform: translateY(10px) rotate(225deg);
+        }
+
+        nav :checked~.icon-burger .line:nth-child(3) {
+            transform: translateY(-10px) rotate(-225deg);
+        }
+
+        nav :checked~.icon-burger .line:nth-child(2) {
+            opacity: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header id="header" class="rell home-header">
+        <div class="header-main-container">
+            <div class="header-main-top-container" id="scrl">
+                <div class="header-top-container">
+                    <a href="/home.html" class="logo">
+                        <img src="assets/images/logo/logo1.png" alt="Logo">
+                    </a>
+                    <div class="header-top-container-content">
+                        <div class="header-top-container-content-card resp-none">
+                            <div class="header-top-container-content-item-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="call-ringing-02 (1) 1">
+                                        <path id="Vector"
+                                            d="M3.77762 11.9424C2.8296 10.2893 2.37185 8.93948 2.09584 7.57121C1.68762 5.54758 2.62181 3.57081 4.16938 2.30947C4.82345 1.77638 5.57323 1.95852 5.96 2.6524L6.83318 4.21891C7.52529 5.46057 7.87134 6.08139 7.8027 6.73959C7.73407 7.39779 7.26737 7.93386 6.33397 9.00601L3.77762 11.9424ZM3.77762 11.9424C5.69651 15.2883 8.70784 18.3013 12.0576 20.2224M12.0576 20.2224C13.7107 21.1704 15.0605 21.6282 16.4288 21.9042C18.4524 22.3124 20.4292 21.3782 21.6905 19.8306C22.2236 19.1766 22.0415 18.4268 21.3476 18.04L19.7811 17.1668C18.5394 16.4747 17.9186 16.1287 17.2604 16.1973C16.6022 16.2659 16.0661 16.7326 14.994 17.666L12.0576 20.2224Z"
+                                            stroke="white" stroke-width="2" stroke-linejoin="round" />
+                                        <path id="Vector_2" d="M14 3V5.8M18.9502 5.05078L16.9703 7.03068M21 10H18.2"
+                                            stroke="#F15B2B" stroke-width="2" stroke-linecap="round" />
+                                    </g>
+                                </svg>
+
+                            </div>
+                            <div class="">
+                                <p class="header-top-container-content-item-text">+994 55 555 65 20
+                                </p>
+                                <span class="top-container-arrow"></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="header-top-container-content-card resp-none">
+                            <div class="header-top-container-content-item-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="clock-01 1">
+                                        <path id="Vector"
+                                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                            stroke="white" stroke-width="2" />
+                                        <path id="Vector_2" d="M12 8V12L14 14" stroke="#F15B2B" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+
+                            </div>
+                            <div class="">
+                                <p class="header-top-container-content-item-text">Hər gün 09:00 - 20:00
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="header-top-container-content-item resp-none">
+                            <div class="header-top-container-content-item-button-container">
+                                <a href="register.html">
+                                    <button class="register-btn">Qeydiyyat</button>
+                                </a>
+
+
+                                <a href="enter.html" class="link-underline">
+                                    <button class="enter-btn-m">Daxil ol</button>
+                                </a>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- <li><a href="home.html">Ana səhifə</a></li>
+            <li><a href="about.html">Haqqımızda</a></li>
+            <li><a href="tariffs.html">Tariflər</a></li>
+            <li><a href="service.html">Xidmətlər</a></li>
+            <li><a href="shop.html">Mağazalar</a></li>
+            <li><a href="news.html">Yeniliklər</a></li>
+            <li><a href="Contact.html">Əlaqə</a></li>
+            <li><a href="agreement.html">İstifadə razılaşması</a></li> -->
+
+            <nav class="resp-block">
+                <input id="nav-toggle" type="checkbox">
+                <ul class="links  overflow-hidden">
+               
+
+
+                   
+
+                    <div class="header-top-container-content-item resp-block">
+                        <div class="header-top-container-content-item-button-container">
+                            <a href="register.html">
+                                <button class="register-btn">Qeydiyyat</button>
+                            </a>
+
+
+                            <a href="enter.html" class="link-underline">
+                                <button class="enter-btn-m">Daxil ol</button>
+                            </a>
+                        </div>
+
+
+                    </div>
+
+                    <li><a class="nav-link " href="/home.html">
+                            <span class="active"></span>
+                            Ana səhifə</a></li>
+                    <li><a class="nav-link" href="about.html">Haqqımızda</a></li>
+                    <li><a class="nav-link" href="/tariffs.html">Tariflər</a></li>
+                    <li><a class="nav-link" href="/service.html">Xidmətlər</a></li>
+                    <li><a class="nav-link" href="/shop.html">Mağazalar</a></li>
+                    <li><a class="nav-link" href="/news.html">Yeniliklər</a></li>
+                    <li><a class="nav-link" href="/contact.html">Əlaqə</a></li>
+                    <li><a href="/agreement.html">İstifadə razılaşması</a></li>
+
+                    
+                    <div class="header-top-container-content-card resp-block mm-tt">
+                        <div class="header-top-container-content-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="clock-01 1">
+                                    <path id="Vector"
+                                        d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                        stroke="white" stroke-width="2" />
+                                    <path id="Vector_2" d="M12 8V12L14 14" stroke="#F15B2B" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+
+                        </div>
+            <div class="">
+                <p class="header-top-container-content-item-text">Hər gün 09:00 - 20:00
+                </p>
+            </div>
+
+                                 </div>
+
+
+
+    <div class="header-top-container-content-card resp-block mm-tt ">
+        <div class="header-top-container-content-item-icon">
+            < <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g id="call-ringing-02 (1) 1">
+                <path id="Vector"
+                    d="M3.77762 11.9424C2.8296 10.2893 2.37185 8.93948 2.09584 7.57121C1.68762 5.54758 2.62181 3.57081 4.16938 2.30947C4.82345 1.77638 5.57323 1.95852 5.96 2.6524L6.83318 4.21891C7.52529 5.46057 7.87134 6.08139 7.8027 6.73959C7.73407 7.39779 7.26737 7.93386 6.33397 9.00601L3.77762 11.9424ZM3.77762 11.9424C5.69651 15.2883 8.70784 18.3013 12.0576 20.2224M12.0576 20.2224C13.7107 21.1704 15.0605 21.6282 16.4288 21.9042C18.4524 22.3124 20.4292 21.3782 21.6905 19.8306C22.2236 19.1766 22.0415 18.4268 21.3476 18.04L19.7811 17.1668C18.5394 16.4747 17.9186 16.1287 17.2604 16.1973C16.6022 16.2659 16.0661 16.7326 14.994 17.666L12.0576 20.2224Z"
+                    stroke="white" stroke-width="2" stroke-linejoin="round" />
+                <path id="Vector_2" d="M14 3V5.8M18.9502 5.05078L16.9703 7.03068M21 10H18.2"
+                    stroke="#F15B2B" stroke-width="2" stroke-linecap="round" />
+            </g>
+        </svg>
+
+
+        </div>
+        <div class="">
+            <p class="header-top-container-content-item-text">Hər gün 09:00 - 20:00
+            </p>
+        </div>
+    </div>
+
+                </ul>
+                <label for="nav-toggle" class="icon-burger ">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </label>
+
+
+
+            </nav>
+            <div class="header-list-container-main no-btm-arr">
+                <div class="header-list-container ">
+                    <ul class="nav-list">
+                        <li><a class="nav-link " href="home.html">
+                                Ana səhifə</a></li>
+                        <li><a class="nav-link" href="about.html">
+                                <span class="active"></span>
+
+                                Haqqımızda</a></li>
+                        <li><a class="nav-link" href="/tariffs.html">Tariflər</a></li>
+                        <li><a class="nav-link" href="/service.html">Xidmətlər</a></li>
+                        <li><a class="nav-link" href="/shop.html">
+
+                                Mağazalar</a></li>
+                        <li><a class="nav-link" href="/news.html">Yeniliklər</a></li>
+                        <li><a class="nav-link" href="/contact.html">Əlaqə</a></li>
+                        <li><a class="nav-link" href="/agreement.html">İstifadə razılaşması</a></li>
+
+                        <div class="custom-select-lan">
+                            <div class="custom-dropdown" id="customDropdown">
+                                <div class="custom-dropdown-selected" id="customDropdownSelected">
+                                    <span class="custom-dropdown-selected-text">AZE</span>
+                                    <span class="language-svg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M6 9L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L18 9"
+                                                stroke="#F15B2B" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="custom-dropdown-options" id="customDropdownOptions">
+                                    <a href="#">
+                                        <div class="custom-dropdown-option selected">AZE</div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="custom-dropdown-option">RU</div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="custom-dropdown-option">ENG</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                    </ul>
+
+
+                </div>
+                
+            </div>
+            
+
+
+
+    </header>
+ 
+ 
+<main class="">
+    <div class="fake-header">
+        <div class="mmm">
+            <div class="abisa-lute-div-container memo">
+                <img src="assets/images/page-bg-images/about.png" alt="">
+            </div>
+        </div> 
+    </div>
+
+
+    <div class="about-min-mar-top-con ">
+
+        <div class="about-header-links d-flex align-items-center mt-5 memo">
+            <p class="come-back-link">
+                <a href="home.html">Ana səhifə</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none">
+                    <path
+                        d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
+                        stroke="#F15B2B" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </p>
+            <p class="in-page ">Haqqımzda</p>
+    
+        </div>
+    
+    
+        <div class="about-page-text-desc memo brdd">
+            <h1 class="about-page-title">Karqo xidmətində Bahar!</h1>
+    
+            <p class="about-page-desc">
+                Bahar Kargo Türkiyədən Azərbaycana, Naxçıvandan Bakıya, Bakıdan Naxçıvana karqo daşınmasını yüksək
+                standartlarda həyata keçirən yerli karqo şirkətidir. Şirkət yarandığı gündən etibarən karqo daşınmasında
+                keyfiyyətli, sərfəli, etibarlı xidmət göstərməyi üstün tutmuşdur. Bahar Kargo olaraq illərdir karqo
+                daşınmasında olan təcrübəmiz və peşəkar kollektivimizlə məmnuniyyəti əsas yol göstəricimiz kimi seçdik.
+                Məmnunluğu təmin etməkdən ötrü idarəetməyə professional yanaşdıq. Həm Türkiyədən Azərbaycana, həm
+                Naxçıvan-Bakı-Naxçıvan arası karqo xidmətlərimizi bölgələrə çatdırmaqla da bütün Azərbaycan üzərində
+                yüksək standartlı xidmət formalaşdırmağı bacardıq. Ən əsası isə Azərbaycan Respublikasının bu sahədə
+                qüvvədə olan qanunvericiliyinin bütün tələblərinə əməl etməklə sizin məmnunluğunuzla qovuşdurduq.
+                Mütəmadi kampaniyalar, sərfəli tariflər, etbarlı xidmətlə Bahar Kargo hər zaman müştəriərini düşündüyünü
+                xüsusi vurğulamışdır. Təsadüfi deyilki seçdiyimiz şüar “evinizə bahar gələcək” oldu. Biz sizə vaxtında,
+                etibarlı və sürətli xidmət təklif edərək, karqonuzu ünvana qədər çatdırırıq və evinizə həm məmnuniyyət,
+                həm xoşbəxtlik, bir sözlə Bahar gətiririk.
+            </p>
+        </div>
+    </div>
+
+
+
+ 
+    </main> 
+
+
+
+    <footer>
+        <div class="footer-main-container memo">
+            <div class="footer-logo">
+                <a href="home.html">
+                    <img src="assets/images/logo/footer-logo.png" alt="">
+                </a>
+            </div>
+            <div class="footer-grid-card-container">
+                <div class="footer-grid-card">
+                    <h3 class="footer-naviqasion-title">Naviqasiya</h3>
+                    <ul class="footer-list">
+                        <li><a href="home.html">Ana səhifə</a></li>
+                        <li><a href="about.html">Haqqımızda</a></li>
+                        <li><a href="tariffs.html">Tariflər</a></li>
+                        <li><a href="service.html">Xidmətlər</a></li>
+                        <li><a href="shop.html">Mağazalar</a></li>
+                        <li><a href="news.html">Yeniliklər</a></li>
+                        <li><a href="Contact.html">Əlaqə</a></li>
+                        <li><a href="agreement.html">İstifadə razılaşması</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid-card">
+                    <h3 class="footer-naviqasion-title">Əlaqə</h3>
+                    <div>
+                        <p class="number-text">Nömrə</p>
+                        <p class="number-text-in-number">+994 55 555 65 20</p>
+                    </div>
+
+                    <div>
+                        <p class="number-text">İş saatları</p>
+                        <p class="number-text-in-number">Hər gün, 09:00 - 20:00</p>
+                    </div>
+
+                    <div>
+                        <p class="number-text">Ünvan</p>
+                        <p class="number-text-in-number-loc">Nizami küçəsi 41, Köhnə qızıldağ
+                            mətbəəsi</p>
+                    </div>
+                </div>
+
+
+                <div class="footer-grid-card">
+                    <h3 class="footer-naviqasion-title">Mobil tətbiqi yüklə
+                    </h3>
+                    <div class="sosial-app">
+                        <a href="">
+                            <div class="sosial-app-card">
+                                <div class="sosial-app-card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36"
+                                        fill="none">
+                                        <path
+                                            d="M18.2367 17.3517L4.92578 31.4792C4.92628 31.4821 4.92728 31.4845 4.92775 31.4875C5.33599 33.0216 6.7373 34.1512 8.40037 34.1512C9.06518 34.1512 9.68936 33.9715 10.2246 33.656L10.2672 33.6311L25.2511 24.9854L18.2367 17.3517Z"
+                                            fill="#EB3131" />
+                                        <path
+                                            d="M31.6958 14.9539L31.683 14.9452L25.214 11.1953L17.9258 17.6801L25.2393 24.9921L31.6742 21.2795C32.8023 20.6705 33.5682 19.4813 33.5682 18.1099C33.5682 16.7483 32.8127 15.5649 31.6958 14.9539Z"
+                                            fill="#F6B60B" />
+                                        <path
+                                            d="M4.92286 4.65625C4.84284 4.95131 4.80078 5.26037 4.80078 5.58131V30.5458C4.80078 30.8662 4.84234 31.1763 4.92337 31.4703L18.6938 17.7038L4.92286 4.65625Z"
+                                            fill="#5778C5" />
+                                        <path
+                                            d="M18.3361 18.0784L25.2263 11.1908L10.2593 2.51385C9.71525 2.18804 9.0803 2 8.40087 2C6.7378 2 5.33459 3.13162 4.92628 4.66749C4.92578 4.66899 4.92578 4.67002 4.92578 4.67134L18.3361 18.0784Z"
+                                            fill="#3BAD49" />
+                                    </svg>
+                                </div>
+                                <div class="sosial-app-card-icon-name">
+                                    <p>Google Play</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="sosial-app-card">
+                                <div class="sosial-app-card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36"
+                                        fill="none">
+                                        <path
+                                            d="M27.6058 18.2842C27.571 14.4175 30.7729 12.5364 30.9193 12.4488C29.1059 9.80585 26.2953 9.44474 25.3076 9.41594C22.947 9.1676 20.6572 10.828 19.4547 10.828C18.2282 10.828 16.3765 9.43994 14.3807 9.48073C11.8125 9.52032 9.40991 11.0068 8.0922 13.315C5.37278 18.0215 7.40095 24.9378 10.0064 28.7421C11.3097 30.6053 12.8326 32.6856 14.826 32.6124C16.7761 32.532 17.5046 31.3695 19.858 31.3695C22.1898 31.3695 22.8738 32.6124 24.9068 32.5656C26.9998 32.532 28.3175 30.694 29.5752 28.8141C31.0813 26.6786 31.6862 24.5755 31.7102 24.4675C31.661 24.4507 27.6454 22.9187 27.6058 18.2842Z"
+                                            fill="white" />
+                                        <path
+                                            d="M23.7621 6.90563C24.811 5.59434 25.5286 3.81037 25.3294 2C23.8113 2.06718 21.9127 3.04975 20.8194 4.33224C19.8522 5.46237 18.9881 7.31473 19.2113 9.05671C20.9166 9.18388 22.6676 8.19652 23.7621 6.90563Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                                <div class="sosial-app-card-icon-name">
+                                    <p>App Store</p>
+                                </div>
+                            </div>
+                        </a>
+
+
+                    </div>
+                    <h3 class="sosila-links-title">Bizi izləyin</h3>
+                    <div class="sosila-links">
+
+                        <a href="">
+                            <div class="sosila-links-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
+                                    fill="none">
+                                    <path
+                                        d="M15.8008 6.27169H12.7357V4.26145C12.7357 3.5065 13.2361 3.3305 13.5885 3.3305C13.9401 3.3305 15.7515 3.3305 15.7515 3.3305V0.0116268L12.7726 0C9.46574 0 8.7132 2.47532 8.7132 4.05938V6.27169H6.80078V9.6916H8.7132C8.7132 14.0805 8.7132 19.3688 8.7132 19.3688H12.7357C12.7357 19.3688 12.7357 14.0284 12.7357 9.6916H15.45L15.8008 6.27169Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="sosila-links-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22"
+                                    fill="none">
+                                    <path
+                                        d="M15.4929 3.34844C16.5961 3.34844 17.654 3.78666 18.4341 4.56669C19.2141 5.34672 19.6523 6.40468 19.6523 7.50781V14.6922C19.6523 15.7953 19.2141 16.8533 18.4341 17.6333C17.654 18.4133 16.5961 18.8516 15.4929 18.8516H8.30858C7.20545 18.8516 6.1475 18.4133 5.36747 17.6333C4.58743 16.8533 4.14922 15.7953 4.14922 14.6922V7.50781C4.14922 6.40468 4.58743 5.34672 5.36747 4.56669C6.1475 3.78666 7.20545 3.34844 8.30858 3.34844H15.4929ZM15.4929 1.83594H8.30858C6.80569 1.84043 5.36564 2.43944 4.30293 3.50215C3.24022 4.56486 2.64121 6.00492 2.63672 7.50781V14.6922C2.64121 16.1951 3.24022 17.6351 4.30293 18.6978C5.36564 19.7606 6.80569 20.3596 8.30858 20.3641H15.4929C16.9958 20.3596 18.4359 19.7606 19.4986 18.6978C20.5613 17.6351 21.1603 16.1951 21.1648 14.6922V7.50781C21.1603 6.00492 20.5613 4.56486 19.4986 3.50215C18.4359 2.43944 16.9958 1.84043 15.4929 1.83594Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.845 5.05469C16.6308 5.05469 16.4213 5.11822 16.2432 5.23726C16.065 5.3563 15.9262 5.52549 15.8442 5.72344C15.7622 5.9214 15.7407 6.13922 15.7825 6.34936C15.8243 6.55951 15.9275 6.75254 16.079 6.90404C16.2305 7.05555 16.4236 7.15873 16.6337 7.20053C16.8438 7.24233 17.0617 7.22088 17.2596 7.13888C17.4576 7.05689 17.6268 6.91803 17.7458 6.73988C17.8648 6.56173 17.9284 6.35228 17.9284 6.13802C17.9284 5.99575 17.9004 5.85488 17.8459 5.72344C17.7915 5.59201 17.7117 5.47258 17.6111 5.37199C17.5105 5.27139 17.3911 5.19159 17.2596 5.13715C17.1282 5.08271 16.9873 5.05469 16.845 5.05469Z"
+                                        fill="white" />
+                                    <path
+                                        d="M11.9511 7.78595C12.6124 7.78557 13.2589 7.98134 13.8089 8.34849C14.3589 8.71564 14.7876 9.23767 15.0408 9.84853C15.2941 10.4594 15.3604 11.1316 15.2315 11.7802C15.1026 12.4288 14.7842 13.0246 14.3166 13.4922C13.849 13.9598 13.2533 14.2781 12.6047 14.4071C11.9561 14.536 11.2838 14.4696 10.673 14.2164C10.0621 13.9632 9.5401 13.5344 9.17295 12.9845C8.8058 12.4345 8.61003 11.788 8.61041 11.1267C8.6119 10.2411 8.96436 9.39227 9.59054 8.76608C10.2167 8.1399 11.0656 7.78745 11.9511 7.78595ZM11.9511 6.27345C10.9912 6.27532 10.0534 6.5617 9.25616 7.09641C8.45894 7.63111 7.83812 8.39014 7.47216 9.27757C7.10619 10.165 7.0115 11.141 7.20006 12.0822C7.38861 13.0235 7.85195 13.8877 8.53151 14.5657C9.21108 15.2436 10.0764 15.705 11.018 15.8913C11.9597 16.0777 12.9355 15.9807 13.822 15.6127C14.7086 15.2446 15.4662 14.622 15.999 13.8236C16.5319 13.0251 16.8161 12.0866 16.8157 11.1267C16.8155 10.4885 16.6894 9.85655 16.4447 9.2671C16.2 8.67765 15.8415 8.14223 15.3897 7.69147C14.9378 7.2407 14.4016 6.88344 13.8116 6.64012C13.2216 6.39681 12.5894 6.2722 11.9511 6.27345Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="sosila-links-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M18.2989 3.70302C16.5754 1.90547 14.2835 0.915105 11.8416 0.914062C6.81026 0.914062 2.71524 5.17993 2.71327 10.4233C2.71257 12.0994 3.13291 13.7354 3.93176 15.1776L2.63672 20.1055L7.47579 18.7831C8.80907 19.5407 10.3102 19.9401 11.838 19.9406H11.8417C11.8414 19.9406 11.842 19.9406 11.8417 19.9406C16.8726 19.9406 20.9679 15.6743 20.9701 10.4309C20.9709 7.88979 20.0223 5.50049 18.2989 3.70302ZM11.8417 18.3345H11.8386C10.4772 18.334 9.14192 17.9529 7.97702 17.2328L7.7 17.0615L4.82843 17.8462L5.59493 14.9294L5.41451 14.6304C4.65505 13.3719 4.25394 11.9173 4.25453 10.4238C4.25617 6.06576 7.6598 2.52022 11.8448 2.52022C13.8712 2.52088 15.7762 3.34416 17.2087 4.83822C18.6411 6.33227 19.4296 8.31821 19.4288 10.4302C19.427 14.7886 16.0235 18.3345 11.8417 18.3345Z"
+                                        fill="white" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M15.9992 12.4143C15.7711 12.2953 14.6497 11.7206 14.4407 11.6412C14.2316 11.5619 14.0796 11.5223 13.9275 11.7601C13.7755 11.998 13.3384 12.5332 13.2053 12.6919C13.0723 12.8504 12.9392 12.8703 12.7112 12.7513C12.4831 12.6323 11.7482 12.3815 10.877 11.5719C10.1989 10.9418 9.74116 10.1637 9.60806 9.92576C9.47504 9.68793 9.59391 9.55934 9.70811 9.44083C9.81071 9.33432 9.93621 9.16331 10.0503 9.02453C10.1643 8.88583 10.2023 8.78662 10.2783 8.62816C10.3544 8.46954 10.3164 8.33076 10.2593 8.21186C10.2023 8.09292 9.74616 6.92333 9.55611 6.44747C9.37092 5.98419 9.18291 6.04696 9.04288 6.03959C8.91004 6.03268 8.75778 6.03125 8.60575 6.03125C8.45372 6.03125 8.20657 6.09074 7.99755 6.32857C7.78849 6.56648 7.19922 7.1414 7.19922 8.31088C7.19922 9.48051 8.01652 10.6104 8.13057 10.769C8.24459 10.9276 9.7389 13.3277 12.0269 14.3569C12.5711 14.6018 12.996 14.748 13.3272 14.8575C13.8736 15.0384 14.3708 15.0128 14.7638 14.9516C15.202 14.8834 16.1133 14.3768 16.3033 13.8218C16.4934 13.2667 16.4934 12.7909 16.4363 12.6918C16.3794 12.5927 16.2273 12.5332 15.9992 12.4143Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="coppy-right memo">
+            <span>Bahar Karqo, 2021. Bütün hüquqlar qorunur.</span>
+        </div>
+
+    </footer>
+
+
+<script src="assets/js/test.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
